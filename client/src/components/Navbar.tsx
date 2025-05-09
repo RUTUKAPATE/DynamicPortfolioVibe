@@ -44,6 +44,8 @@ const Navbar = () => {
               <a href="#about" className="hover:text-primary transition-colors">About</a>
               <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
               <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+              <a href="#workshops" className="hover:text-primary transition-colors">Workshops</a>
+              <a href="#certifications" className="hover:text-primary transition-colors">Certifications</a>
               <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </>
           ) : (
@@ -77,6 +79,8 @@ const Navbar = () => {
               <a href="#about" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>About</a>
               <a href="#experience" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Experience</a>
               <a href="#projects" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Projects</a>
+              <a href="#workshops" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Workshops</a>
+              <a href="#certifications" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Certifications</a>
               <a href="#contact" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Contact</a>
             </>
           ) : (

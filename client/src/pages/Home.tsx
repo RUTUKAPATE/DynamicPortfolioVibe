@@ -4,9 +4,11 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
-import Awards from "@/components/Awards";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import Services from "@/components/Services";
+import Workshops from "@/components/Workshops";
+import Certifications from "@/components/Certifications";
 
 const Home = () => {
   useEffect(() => {
@@ -64,10 +66,12 @@ const Home = () => {
       <Hero />
       <About />
       <Experience />
+      <Services />
       <Skills />
       <Projects />
       <Education />
-      <Awards />
+      <Workshops />
+      <Certifications />
       <Contact />
     </>
   );
