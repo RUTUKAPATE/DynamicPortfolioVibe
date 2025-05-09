@@ -58,16 +58,16 @@
   body {
     @apply bg-background text-foreground font-inter antialiased;
   }
-  
+
   /* Add global margins */
   .container {
-    @apply px-6 md:px-10 lg:px-32 xl:px-40 max-w-[1440px] mx-auto;
+    @apply px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 max-w-[1440px] mx-auto w-full overflow-x-hidden;
   }
 
-  /* Specific margins for laptop screens */
+  /* Custom breakpoint for better spacing */
   @media (min-width: 1024px) {
     .container {
-      @apply px-16;
+      @apply px-20;
     }
   }
 }
@@ -76,7 +76,7 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-  
+
   .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -112,21 +112,21 @@
     filter: grayscale(100%) invert(var(--map-invert));
     @apply transition-all duration-300;
   }
-  
+
   /* Responsive improvements */
   @media (max-width: 768px) {
     .responsive-grid {
       @apply grid-cols-1;
     }
-    
+
     .responsive-flex {
       @apply flex-col;
     }
-    
+
     .responsive-text {
       @apply text-left text-base;
     }
-    
+
     .responsive-hide {
       @apply hidden;
     }
