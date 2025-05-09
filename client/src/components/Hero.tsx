@@ -70,13 +70,13 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex mt-8 gap-6"
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+            <a href="https://github.com/RUTUKAPATE/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
               <i className="fab fa-github text-2xl"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+            <a href="https://linkedin.com/in/rutuja-kapate" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
               <i className="fab fa-linkedin text-2xl"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+            <a href="https://x.com/KapateRutuja" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
               <i className="fab fa-twitter text-2xl"></i>
             </a>
             <a href="mailto:rutuja16kapate@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">

@@ -1,20 +1,21 @@
-
 import { useEffect, useRef } from "react";
 
 export function Model3D() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   return (
-    <div ref={containerRef} className="w-full h-full rounded-full overflow-hidden relative shadow-2xl">
-      <img 
-        src="https://img.freepik.com/free-vector/3d-cartoon-young-woman-sitting-working-laptop_522220-177.jpg" 
-        alt="3D Cartoon Developer Girl" 
+    <div
+      ref={containerRef}
+      className="w-full h-full rounded-full overflow-hidden relative shadow-2xl"
+    >
+      <img src="/src/assets/AdobeStock_1213309036_Preview.jpeg"
+        alt="3D Cartoon Developer Girl"
         className="w-full h-full object-cover"
       />
-      
+
       {/* Overlay with animated gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse-slow"></div>
-      
+
       {/* Interactive elements */}
       <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
         <div className="w-24 h-24 rounded-full bg-primary/20 animate-ping"></div>
