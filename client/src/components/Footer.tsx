@@ -4,9 +4,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <a href="#" className="text-3xl font-bold font-poppins bg-gradient-text mb-4 inline-block">
-              Rutuja<span className="hidden sm:inline">.dev</span>
-            </a>
+            <div className="text-3xl font-bold font-poppins mb-4 inline-block relative w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">R</div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary-foreground/50 rounded-full"></div>
+            </div>
             <p className="max-w-md mt-4">
               A passionate web developer and electronics engineer creating unique digital experiences with modern technologies.
             </p>
