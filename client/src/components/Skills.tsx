@@ -51,12 +51,12 @@ const Skills = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.5, delay: (categoryIndex * 0.2) + (index * 0.05) }}
-                    className="skill-bubble bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center"
+                    className="skill-bubble bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl group"
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${category.color} opacity-10 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <i className={`${skill.icon} text-gray-800 dark:text-white text-2xl`}></i>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${category.color} opacity-20 group-hover:opacity-30 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300`}>
+                      <i className={`${skill.icon} text-gray-800 dark:text-white text-3xl font-bold transition-all duration-300 group-hover:scale-110`}></i>
                     </div>
-                    <h3 className="font-bold font-poppins">{skill.name}</h3>
+                    <h3 className="font-bold font-poppins group-hover:text-primary transition-colors duration-300">{skill.name}</h3>
                   </motion.div>
                 ))}
               </div>
