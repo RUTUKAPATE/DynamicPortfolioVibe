@@ -6,8 +6,6 @@ import { Route, Switch, useLocation } from "wouter";
 import Home from "@/pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
-import WorkshopsPage from "./pages/WorkshopsPage";
-import CertificationsPage from "./pages/CertificationsPage";
 import AdminPage from "./pages/AdminPage";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
@@ -27,8 +25,6 @@ function App() {
             <Route path="/" component={Home} />
             <Route path="/about" component={AboutPage} />
             <Route path="/projects" component={ProjectsPage} />
-            <Route path="/workshops" component={WorkshopsPage} />
-            <Route path="/certifications" component={CertificationsPage} />
             <Route path="/admin" component={AdminPage} />
             <Route component={NotFound} />
           </Switch>

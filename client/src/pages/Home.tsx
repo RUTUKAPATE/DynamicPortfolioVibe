@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Awards from "@/components/Awards";
-import Workshops from "@/components/Workshops";
-import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 
 const Home = () => {
   useEffect(() => {
@@ -65,13 +63,11 @@ const Home = () => {
     <>
       <Hero />
       <About />
-      <Services />
+      <Experience />
       <Skills />
       <Projects />
       <Education />
       <Awards />
-      <Workshops />
-      <Certifications />
       <Contact />
     </>
   );

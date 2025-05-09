@@ -42,12 +42,8 @@ const Navbar = () => {
           {isHomePage ? (
             <>
               <a href="#about" className="hover:text-primary transition-colors">About</a>
-              <a href="#services" className="hover:text-primary transition-colors">Services</a>
-              <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
+              <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
               <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#education" className="hover:text-primary transition-colors">Education</a>
-              <a href="#workshops" className="hover:text-primary transition-colors">Workshops</a>
-              <a href="#certifications" className="hover:text-primary transition-colors">Certifications</a>
               <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </>
           ) : (
@@ -55,8 +51,6 @@ const Navbar = () => {
               <Link href="/" className="hover:text-primary transition-colors">Home</Link>
               <Link href="/about" className={`hover:text-primary transition-colors ${location === "/about" ? "text-primary font-medium" : ""}`}>About</Link>
               <Link href="/projects" className={`hover:text-primary transition-colors ${location === "/projects" ? "text-primary font-medium" : ""}`}>Projects</Link>
-              <Link href="/workshops" className={`hover:text-primary transition-colors ${location === "/workshops" ? "text-primary font-medium" : ""}`}>Workshops</Link>
-              <Link href="/certifications" className={`hover:text-primary transition-colors ${location === "/certifications" ? "text-primary font-medium" : ""}`}>Certifications</Link>
               <Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link>
             </>
           )}
@@ -81,12 +75,8 @@ const Navbar = () => {
           {isHomePage ? (
             <>
               <a href="#about" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>About</a>
-              <a href="#services" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Services</a>
-              <a href="#skills" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Skills</a>
+              <a href="#experience" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Experience</a>
               <a href="#projects" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Projects</a>
-              <a href="#education" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Education</a>
-              <a href="#workshops" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Workshops</a>
-              <a href="#certifications" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Certifications</a>
               <a href="#contact" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Contact</a>
             </>
           ) : (
@@ -94,8 +84,6 @@ const Navbar = () => {
               <Link href="/" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Home</Link>
               <Link href="/about" className={`py-2 hover:text-primary transition-colors ${location === "/about" ? "text-primary font-medium" : ""}`} onClick={closeMenu}>About</Link>
               <Link href="/projects" className={`py-2 hover:text-primary transition-colors ${location === "/projects" ? "text-primary font-medium" : ""}`} onClick={closeMenu}>Projects</Link>
-              <Link href="/workshops" className={`py-2 hover:text-primary transition-colors ${location === "/workshops" ? "text-primary font-medium" : ""}`} onClick={closeMenu}>Workshops</Link>
-              <Link href="/certifications" className={`py-2 hover:text-primary transition-colors ${location === "/certifications" ? "text-primary font-medium" : ""}`} onClick={closeMenu}>Certifications</Link>
               <Link href="/#contact" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Contact</Link>
             </>
           )}
