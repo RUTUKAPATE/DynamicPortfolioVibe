@@ -47,8 +47,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         port: 587,
         secure: false,
         auth: {
-          user: "noreply@example.com", // This would be replaced with an actual email in production
-          pass: process.env.EMAIL_PASSWORD || "password",
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD,
         },
       });
 
