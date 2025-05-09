@@ -34,7 +34,17 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      await apiRequest.sendEmail.mutate(data);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you soon!",
