@@ -62,9 +62,9 @@ const About = () => {
             className="order-1 md:order-2 relative"
           >
             <img 
-              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
               alt="Creative Developer Workspace" 
-              className="w-full rounded-2xl shadow-xl transform rotate-2"
+              className="w-full max-w-md mx-auto rounded-2xl shadow-xl transform rotate-2"
             />
             
             <div className="absolute -bottom-5 -left-5 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-4 transform -rotate-3">
