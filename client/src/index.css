@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 249 76% 67%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 336 74% 64%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  --map-invert: 0;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 249 76% 67%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 336 74% 64%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  --map-invert: 1;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .skill-bubble {
+    @apply transition-all duration-300;
+  }
+
+  .skill-bubble:hover {
+    @apply transform scale-110 -translate-y-1 shadow-lg;
+  }
+
+  .project-card {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+
+  .project-card:hover {
+    @apply transform -translate-y-2 shadow-xl;
+    transform: translateY(-10px) rotateY(5deg);
+  }
+
+  .timeline-dot::before {
+    content: '';
+    @apply absolute w-0.5 bg-current opacity-30 top-6 -bottom-3 left-1/2 transform -translate-x-1/2 dark:opacity-20;
+  }
+
+  .timeline-dot:last-child::before {
+    @apply hidden;
+  }
+
+  .map-container {
+    filter: grayscale(100%) invert(var(--map-invert));
+    @apply transition-all duration-300;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.bg-gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
+}
