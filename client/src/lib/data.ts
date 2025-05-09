@@ -3,30 +3,30 @@ import { z } from "zod";
 // Categorized Skills data
 export const skillsCategories = {
   frontend: [
-    { name: "HTML5", icon: "fab fa-html5" },
-    { name: "CSS3", icon: "fab fa-css3-alt" },
-    { name: "JavaScript", icon: "fab fa-js" },
-    { name: "React", icon: "fab fa-react" },
-    { name: "React Native", icon: "fab fa-react" },
-    { name: "Tailwind CSS", icon: "fas fa-wind" },
+    { name: "HTML5", icon: "fab fa-html5", category: "frontend" },
+    { name: "CSS3", icon: "fab fa-css3-alt", category: "frontend" },
+    { name: "JavaScript", icon: "fab fa-js", category: "frontend" },
+    { name: "React", icon: "fab fa-react", category: "frontend" },
+    { name: "React Native", icon: "fab fa-react", category: "frontend" },
+    { name: "Tailwind CSS", icon: "fas fa-wind", category: "frontend" },
   ],
   backend: [
-    { name: "Node.js", icon: "fab fa-node-js" },
-    { name: "Express", icon: "fab fa-node" },
-    { name: "Next.js", icon: "fab fa-react" },
-    { name: "Strapi", icon: "fas fa-server" },
+    { name: "Node.js", icon: "fab fa-node-js", category: "backend" },
+    { name: "Express", icon: "fab fa-node", category: "backend" },
+    { name: "Next.js", icon: "fab fa-react", category: "backend" },
+    { name: "Strapi", icon: "fas fa-server", category: "backend" },
   ],
   database: [
-    { name: "MySQL", icon: "fas fa-database" },
-    { name: "Firebase", icon: "fas fa-fire" },
+    { name: "MySQL", icon: "fas fa-database", category: "database" },
+    { name: "Firebase", icon: "fas fa-fire", category: "database" },
   ],
   tools: [
-    { name: "Git", icon: "fab fa-git-alt" },
-    { name: "Figma", icon: "fab fa-figma" },
-    { name: "Postman", icon: "fas fa-paper-plane" },
-    { name: "VS Code", icon: "fas fa-code" },
-    { name: "C/C++", icon: "fas fa-code" },
-    { name: "Embedded C", icon: "fas fa-microchip" },
+    { name: "Git", icon: "fab fa-git-alt", category: "tools" },
+    { name: "Figma", icon: "fab fa-figma", category: "tools" },
+    { name: "Postman", icon: "fas fa-paper-plane", category: "tools" },
+    { name: "VS Code", icon: "fas fa-code", category: "tools" },
+    { name: "C/C++", icon: "fas fa-code", category: "tools" },
+    { name: "Embedded C", icon: "fas fa-microchip", category: "tools" },
   ],
 };
 
@@ -69,8 +69,8 @@ export const projects = [
     description: "A full-featured online store with product management, cart system, and payment integration.",
     image: "https://images.unsplash.com/photo-1617042375876-a13e36732a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["React", "Node.js", "MongoDB"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://ecommerce-demo.com",
+    codeUrl: "https://github.com/rutujakapate/ecommerce",
     category: "fullstack",
   },
   {
@@ -78,8 +78,8 @@ export const projects = [
     description: "A productivity tool for organizing tasks with drag-and-drop functionality and reminders.",
     image: "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["React Native", "Firebase", "Redux"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://taskapp-demo.com",
+    codeUrl: "https://github.com/rutujakapate/taskapp",
     category: "frontend",
   },
   {
@@ -87,8 +87,8 @@ export const projects = [
     description: "A 3D-inspired personal portfolio with interactive elements and smooth animations.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["Next.js", "Three.js", "Tailwind"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://rutujakapate.com",
+    codeUrl: "https://github.com/rutujakapate/portfolio",
     category: "frontend",
   },
   {
@@ -96,8 +96,8 @@ export const projects = [
     description: "A RESTful API for a blog platform with authentication, authorization, and content management.",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["Node.js", "Express", "MongoDB"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://blog-api-demo.com",
+    codeUrl: "https://github.com/rutujakapate/blog-api",
     category: "backend",
   },
   {
@@ -105,8 +105,8 @@ export const projects = [
     description: "A real-time weather dashboard with location tracking, forecasts, and interactive maps.",
     image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["React", "Weather API", "Chart.js"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://weather-demo.com",
+    codeUrl: "https://github.com/rutujakapate/weather-app",
     category: "frontend",
   },
   {
@@ -114,8 +114,8 @@ export const projects = [
     description: "A full-featured social network with user profiles, real-time chat, news feed, and notifications.",
     image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    demoLink: "#",
-    githubLink: "#",
+    liveUrl: "https://social-demo.com",
+    codeUrl: "https://github.com/rutujakapate/social-network",
     category: "fullstack",
   },
 ];
@@ -127,18 +127,37 @@ export const education = [
     institution: "St. Vincent Pallotti College of Engineering and Technology",
     location: "Nagpur, Maharashtra, India",
     score: "CGPA: 8.23/10",
+    duration: "2019-2023",
+    description: "Four-year undergraduate program focused on electronics, telecommunication systems, and embedded programming. Developed strong analytical and problem-solving skills through practical projects and laboratory work.",
+    achievements: [
+      "Department topper in Digital Signal Processing",
+      "Best final year project: IoT-based Smart Home System",
+      "Member of the college technical club"
+    ]
   },
   {
     degree: "HSC (Higher Secondary Certificate)",
     institution: "St. Paul Public School & Junior College",
     location: "Nagpur, Maharashtra, India",
     score: "Percentage: 92.67/100",
+    duration: "2017-2019",
+    description: "Science stream with focus on Physics, Chemistry, and Mathematics. Participated in various inter-school competitions and science exhibitions.",
+    achievements: [
+      "School topper in Mathematics",
+      "Science project competition winner"
+    ]
   },
   {
     degree: "SSC (Secondary School Certificate)",
     institution: "St. Joseph's Convent Girl's High School",
     location: "Nagpur, Maharashtra, India",
     score: "Percentage: 86.40/100",
+    duration: "2017",
+    description: "Completed secondary education with distinction. Active participant in cultural and extra-curricular activities.",
+    achievements: [
+      "School prefect",
+      "Winner of inter-school debate competition"
+    ]
   },
 ];
 
@@ -148,16 +167,22 @@ export const awards = [
     title: "fastn Ambassador",
     description: "Conducted college workshops, online webinars, quizzes, and competitions, promoting fastn and guiding students in building projects using the language, while distributing swags.",
     icon: "fas fa-award",
+    year: "2023",
+    organization: "fastn Foundation"
   },
   {
     title: "Coordinator at Hack-A-Thon 2024",
     description: "Successfully managed the event at SVPCET, ensuring smooth operations and connecting with amazing individuals, while learning about their innovative projects and fostering a collaborative environment.",
     icon: "fas fa-users",
+    year: "2024",
+    organization: "SVPCET"
   },
   {
     title: "NSS Member",
     description: "Actively participated in community service projects, promoting social welfare, and contributing to various awareness campaigns and events.",
     icon: "fas fa-hands-helping",
+    year: "2021-2023",
+    organization: "National Service Scheme"
   },
 ];
 
@@ -168,56 +193,72 @@ export const certifications = [
     issuer: "Udemy",
     year: "2023",
     description: "Comprehensive course covering HTML, CSS, JavaScript, React and Node.js.",
-    type: "certification",
+    type: "technical",
+    image: "https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://udemy.com/certificate/123456"
   },
   {
     title: "React Native Fundamentals",
     issuer: "Coursera",
     year: "2023",
     description: "Mobile app development with React Native and cross-platform integration.",
-    type: "certification",
+    type: "technical",
+    image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://coursera.org/verify/123456"
   },
   {
     title: "Advanced JavaScript",
     issuer: "Coursera",
     year: "2022",
     description: "Deep dive into JavaScript concepts, asynchronous programming, and ES6+ features.",
-    type: "certification",
+    type: "technical",
+    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://coursera.org/verify/234567"
   },
   {
     title: "Frontend Web Development",
     issuer: "freeCodeCamp",
     year: "2022",
     description: "Responsive web design, JavaScript algorithms, and front-end libraries.",
-    type: "certification",
+    type: "technical",
+    image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://freecodecamp.org/certification/123456"
   },
   {
-    title: "UI/UX Design Workshop",
-    issuer: "Google Developer Group",
-    year: "2022",
-    description: "Workshop on creating user-centered designs and effective interfaces.",
-    type: "workshop",
-  },
-  {
-    title: "Embedded Systems Workshop",
-    issuer: "IEEE Student Branch",
-    year: "2022",
-    description: "Hands-on workshop on microcontrollers and embedded programming.",
-    type: "workshop",
-  },
-  {
-    title: "Cloud Computing Workshop",
-    issuer: "AWS Community",
+    title: "Project Management",
+    issuer: "Google",
     year: "2023",
-    description: "Introduction to AWS services, cloud architecture, and deployment strategies.",
-    type: "workshop",
+    description: "Professional certification covering project planning, execution, and team management.",
+    type: "professional",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://google.com/certification/123456"
   },
   {
-    title: "Mobile UX Design",
+    title: "UI/UX Design Principles",
     issuer: "Interaction Design Foundation",
+    year: "2022",
+    description: "Professional certification in user interface design and user experience methodologies.",
+    type: "professional",
+    image: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://interaction-design.org/certificate/123456"
+  },
+  {
+    title: "Agile Development",
+    issuer: "Scrum.org",
     year: "2023",
-    description: "Mobile-specific user experience design principles and best practices.",
-    type: "workshop",
+    description: "Professional Scrum Master certification for agile project management.",
+    type: "professional",
+    image: "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://scrum.org/certificates/123456"
+  },
+  {
+    title: "Cloud Architect",
+    issuer: "AWS",
+    year: "2023",
+    description: "Professional certification in cloud architecture and AWS services.",
+    type: "professional",
+    image: "https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    url: "https://aws.amazon.com/certification/verify/123456"
   },
 ];
 
@@ -231,7 +272,9 @@ export const workshops = [
     description: "Led a hands-on workshop introducing students to the fastn programming language, focusing on building simple web applications with practical exercises.",
     skills: ["fastn", "Web Development", "Instruction"],
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "conducted"
+    type: "conducted",
+    certificateUrl: null,
+    slidesUrl: "https://slides.com/rutuja/fastn-workshop"
   },
   {
     title: "Web Development Bootcamp",
@@ -241,7 +284,9 @@ export const workshops = [
     description: "Organized a two-day bootcamp on modern web development practices, coordinating speakers, managing logistics, and providing technical assistance to participants.",
     skills: ["Event Management", "React", "Node.js"],
     image: "https://images.unsplash.com/photo-1559223607-a43f990c095d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "conducted"
+    type: "conducted",
+    certificateUrl: null,
+    slidesUrl: "https://slides.com/rutuja/web-dev-bootcamp"
   },
   {
     title: "Hackathon 2024",
@@ -251,7 +296,9 @@ export const workshops = [
     description: "Managed technical aspects and provided support to participants during the 24-hour coding competition. Evaluated projects and facilitated networking between students and industry mentors.",
     skills: ["Project Evaluation", "Technical Support", "Event Management"],
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "conducted"
+    type: "conducted",
+    certificateUrl: "https://certify.com/hackathon-2024",
+    slidesUrl: null
   },
   {
     title: "React Native Workshop",
@@ -261,7 +308,9 @@ export const workshops = [
     description: "Participated in an intensive workshop on building cross-platform mobile applications with React Native, learning best practices and advanced techniques for mobile development.",
     skills: ["React Native", "Mobile Development", "JavaScript"],
     image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "attended"
+    type: "attended",
+    certificateUrl: "https://gdg.community.dev/certificates/123456",
+    slidesUrl: null
   },
   {
     title: "UI/UX Design Workshop",
@@ -271,7 +320,9 @@ export const workshops = [
     description: "Attended a comprehensive workshop on modern UI/UX design principles, user research methodologies, and prototyping techniques using industry-standard tools.",
     skills: ["UI/UX Design", "Figma", "User Research"],
     image: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "attended"
+    type: "attended",
+    certificateUrl: "https://adobe.com/certificates/123456",
+    slidesUrl: null
   },
   {
     title: "Embedded Systems Workshop",
@@ -281,7 +332,9 @@ export const workshops = [
     description: "Engaged in a practical workshop on embedded system design and programming, working with microcontrollers to build simple IoT applications.",
     skills: ["Embedded C", "Microcontrollers", "IoT"],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    type: "attended"
+    type: "attended",
+    certificateUrl: "https://ieee.org/certificates/123456",
+    slidesUrl: null
   }
 ];
 

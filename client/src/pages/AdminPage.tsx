@@ -17,8 +17,6 @@ import {
   DialogDescription 
 } from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
 type ContactMessage = {
@@ -35,9 +33,12 @@ const AdminPage = () => {
   const [selectedMessage, setSelectedMessage] = useState<ContactMessage | null>(null);
   const { toast } = useToast();
   
-  const { data: messages, isLoading } = useQuery({
+  const { data: messages, isLoading } = useQuery<ContactMessage[]>({
     queryKey: ['/api/contact'],
-    queryFn: () => apiRequest('GET', '/api/contact'),
+    queryFn: async () => {
+      const response = await apiRequest('GET', '/api/contact');
+      return response as ContactMessage[];
+    },
   });
 
   const markAsRead = useMutation({
@@ -102,7 +103,7 @@ const AdminPage = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {messages.map((message: ContactMessage) => (
+                  {messages.map((message) => (
                     <TableRow key={message.id} className={message.isRead ? 'opacity-70' : ''}>
                       <TableCell>{formatDate(message.createdAt)}</TableCell>
                       <TableCell>{message.name}</TableCell>

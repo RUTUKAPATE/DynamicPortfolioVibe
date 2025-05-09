@@ -113,10 +113,10 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex justify-between">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 font-medium transition-colors">
                     <i className="fas fa-link mr-1"></i> Live Demo
                   </a>
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 font-medium transition-colors">
                     <i className="fab fa-github mr-1"></i> GitHub
                   </a>
                 </div>
