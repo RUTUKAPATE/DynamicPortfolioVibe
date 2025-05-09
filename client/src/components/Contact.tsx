@@ -31,7 +31,7 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
       await apiRequest.sendEmail.mutate(data);
@@ -41,11 +41,18 @@ const Contact = () => {
       });
       form.reset();
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: "Failed to send message",
-        description: "There was an error sending your message. Please try again.",
+        description: error instanceof Error ? error.message : "There was an error sending your message. Please try again.",
         variant: "destructive",
       });
+      if (error instanceof Error && error.message.includes('validation')) {
+        form.setError('root', { 
+          type: 'manual',
+          message: 'Please check all fields are filled correctly.' 
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
