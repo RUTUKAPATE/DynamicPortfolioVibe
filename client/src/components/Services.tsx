@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { services } from "@/lib/data";
-import { Link } from "wouter";
 
 const Services = () => {
   const [ref, inView] = useInView({
@@ -10,7 +9,7 @@ const Services = () => {
   });
 
   return (
-    <section id="services" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
+    <section id="services" ref={ref} className="py-20 relative">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +20,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Services I Offer</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Professional services tailored to meet your digital needs with a focus on quality and innovation.
+            Professional services tailored to meet your project needs with a focus on quality and innovation.
           </p>
         </motion.div>
         
@@ -44,26 +43,11 @@ const Services = () => {
               </p>
               
               <a href="#contact" className="text-primary hover:text-primary/80 font-medium transition-colors flex items-center">
-                Inquire about this service <i className="fas fa-arrow-right ml-2"></i>
+                Request this service <i className="fas fa-arrow-right ml-2"></i>
               </a>
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            Looking for customized solutions tailored to your specific needs? Let's discuss how I can help bring your vision to life.
-          </p>
-          
-          <a href="#contact" className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg shadow-primary/20 font-medium transition-all transform hover:-translate-y-1">
-            Get in Touch <i className="fas fa-paper-plane ml-2"></i>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

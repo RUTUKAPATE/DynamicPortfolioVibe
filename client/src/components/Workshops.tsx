@@ -9,7 +9,7 @@ const Workshops = () => {
     threshold: 0.1,
   });
 
-  // Only show 3 workshops on the home page (selected ones)
+  // Only show 3 featured workshops on home page
   const featuredWorkshops = workshops.slice(0, 3);
 
   return (

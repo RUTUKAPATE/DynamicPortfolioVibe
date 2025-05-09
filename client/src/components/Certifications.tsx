@@ -9,8 +9,8 @@ const Certifications = () => {
     threshold: 0.1,
   });
 
-  // Only show 4 certifications on the home page
-  const featuredCertifications = certifications.slice(0, 4);
+  // Only show 3 featured certifications on home page
+  const featuredCertifications = certifications.slice(0, 3);
 
   return (
     <section id="certifications" ref={ref} className="py-20 relative">
@@ -24,35 +24,48 @@ const Certifications = () => {
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Certifications</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Professional certifications and workshop completions that have enhanced my skills and knowledge.
+            Professional credentials and certifications I've earned throughout my career journey.
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredCertifications.map((cert, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {featuredCertifications.map((certification, index) => (
             <motion.div 
-              key={cert.title}
+              key={certification.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl border border-gray-100 dark:border-gray-700"
             >
-              <div className="h-16 bg-gradient-to-r from-primary/10 to-secondary/10 flex items-center justify-center">
-                <i className={`${cert.type === 'certification' ? 'fas fa-certificate' : 'fas fa-chalkboard-teacher'} text-4xl ${cert.type === 'certification' ? 'text-primary' : 'text-secondary'}`}></i>
+              <div className="mb-4">
+                <img 
+                  src={certification.image || 'https://placehold.co/100x100?text=Cert'} 
+                  alt={certification.title} 
+                  className="w-20 h-20 object-contain mb-4" 
+                />
+                <span className={`px-3 py-1 rounded-full text-xs ${
+                  certification.type === 'professional' 
+                    ? 'bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400' 
+                    : 'bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400'
+                }`}>
+                  {certification.type === 'professional' ? 'Professional' : 'Technical'}
+                </span>
               </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg font-bold font-poppins">{cert.title}</h3>
-                  <span className={`px-2 py-1 rounded-full text-xs ${
-                    cert.type === 'certification' 
-                      ? 'bg-primary/10 text-primary' 
-                      : 'bg-secondary/10 text-secondary'
-                  }`}>
-                    {cert.type === 'certification' ? 'Cert' : 'Workshop'}
-                  </span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{cert.issuer} • {cert.year}</p>
-              </div>
+              
+              <h3 className="text-xl font-bold font-poppins mb-2">{certification.title}</h3>
+              <p className="text-primary font-medium text-sm mb-2">{certification.issuer} • {certification.year}</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{certification.description}</p>
+              
+              {certification.url && (
+                <a 
+                  href={certification.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-primary hover:text-primary/80 font-medium transition-colors flex items-center"
+                >
+                  View Credential <i className="fas fa-external-link-alt ml-2"></i>
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
