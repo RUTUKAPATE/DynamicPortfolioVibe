@@ -34,7 +34,7 @@ const Contact = () => {
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     try {
-      await apiRequest("POST", "/api/contact", data);
+      await apiRequest.sendEmail.mutate(data);
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you soon!",

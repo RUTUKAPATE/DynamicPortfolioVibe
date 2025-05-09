@@ -25,22 +25,22 @@ import { eq } from "drizzle-orm";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // ===== Contact API Endpoints =====
-  
+
   // Submit contact form
   app.post("/api/contact", async (req, res) => {
     try {
       // Validate request data
       const result = contactSchema.safeParse(req.body);
-      
+
       if (!result.success) {
         return res.status(400).json({ 
           message: "Invalid form data", 
           errors: result.error.errors 
         });
       }
-      
+
       const { name, email, subject, message } = result.data;
-      
+
       // Create transporter
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -51,7 +51,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           pass: process.env.EMAIL_PASSWORD || "password",
         },
       });
-      
+
       // Email content
       const mailOptions = {
         from: `"Portfolio Contact" <noreply@example.com>`,
@@ -61,7 +61,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         text: `
           Name: ${name}
           Email: ${email}
-          
+
           Message:
           ${message}
         `,
@@ -78,17 +78,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
           </div>
         `,
       };
-      
+
       // Store the contact message in database
       await storage.createContactMessage({ name, email, subject, message });
-      
+
       return res.status(200).json({ message: "Message sent successfully" });
     } catch (error) {
       console.error("Error processing contact form:", error);
       return res.status(500).json({ message: "Failed to send message" });
     }
   });
-  
+
   // Get all contact messages
   app.get("/api/contact", async (_req, res) => {
     try {
@@ -99,19 +99,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to fetch messages" });
     }
   });
-  
+
   // ===== Projects API Endpoints =====
-  
+
   // Get all projects
   app.get("/api/projects", async (req, res) => {
     try {
       const { category } = req.query;
       let query = db.select().from(projects);
-      
+
       if (category && typeof category === 'string') {
         query = query.where(eq(projects.category, category));
       }
-      
+
       const projectsList = await query.orderBy(projects.createdAt);
       return res.status(200).json(projectsList);
     } catch (error) {
@@ -119,36 +119,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to fetch projects" });
     }
   });
-  
+
   // Get project by ID
   app.get("/api/projects/:id", async (req, res) => {
     try {
       const { id } = req.params;
       const [project] = await db.select().from(projects).where(eq(projects.id, parseInt(id)));
-      
+
       if (!project) {
         return res.status(404).json({ message: "Project not found" });
       }
-      
+
       return res.status(200).json(project);
     } catch (error) {
       console.error("Error fetching project:", error);
       return res.status(500).json({ message: "Failed to fetch project" });
     }
   });
-  
+
   // Create project
   app.post("/api/projects", async (req, res) => {
     try {
       const result = projectSchema.safeParse(req.body);
-      
+
       if (!result.success) {
         return res.status(400).json({ 
           message: "Invalid project data", 
           errors: result.error.errors 
         });
       }
-      
+
       const [project] = await db.insert(projects).values(result.data).returning();
       return res.status(201).json(project);
     } catch (error) {
@@ -156,19 +156,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to create project" });
     }
   });
-  
+
   // ===== Skills API Endpoints =====
-  
+
   // Get all skills
   app.get("/api/skills", async (req, res) => {
     try {
       const { category } = req.query;
       let query = db.select().from(skills);
-      
+
       if (category && typeof category === 'string') {
         query = query.where(eq(skills.category, category));
       }
-      
+
       const skillsList = await query;
       return res.status(200).json(skillsList);
     } catch (error) {
@@ -176,19 +176,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to fetch skills" });
     }
   });
-  
+
   // Create skill
   app.post("/api/skills", async (req, res) => {
     try {
       const result = skillSchema.safeParse(req.body);
-      
+
       if (!result.success) {
         return res.status(400).json({ 
           message: "Invalid skill data", 
           errors: result.error.errors 
         });
       }
-      
+
       const [skill] = await db.insert(skills).values(result.data).returning();
       return res.status(201).json(skill);
     } catch (error) {
@@ -196,19 +196,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to create skill" });
     }
   });
-  
+
   // ===== Workshops API Endpoints =====
-  
+
   // Get all workshops
   app.get("/api/workshops", async (req, res) => {
     try {
       const { type } = req.query;
       let query = db.select().from(workshops);
-      
+
       if (type && typeof type === 'string') {
         query = query.where(eq(workshops.type, type));
       }
-      
+
       const workshopsList = await query.orderBy(workshops.date);
       return res.status(200).json(workshopsList);
     } catch (error) {
@@ -216,36 +216,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to fetch workshops" });
     }
   });
-  
+
   // Get workshop by ID
   app.get("/api/workshops/:id", async (req, res) => {
     try {
       const { id } = req.params;
       const [workshop] = await db.select().from(workshops).where(eq(workshops.id, parseInt(id)));
-      
+
       if (!workshop) {
         return res.status(404).json({ message: "Workshop not found" });
       }
-      
+
       return res.status(200).json(workshop);
     } catch (error) {
       console.error("Error fetching workshop:", error);
       return res.status(500).json({ message: "Failed to fetch workshop" });
     }
   });
-  
+
   // Create workshop
   app.post("/api/workshops", async (req, res) => {
     try {
       const result = workshopSchema.safeParse(req.body);
-      
+
       if (!result.success) {
         return res.status(400).json({ 
           message: "Invalid workshop data", 
           errors: result.error.errors 
         });
       }
-      
+
       const [workshop] = await db.insert(workshops).values(result.data).returning();
       return res.status(201).json(workshop);
     } catch (error) {
@@ -253,19 +253,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to create workshop" });
     }
   });
-  
+
   // ===== Certifications API Endpoints =====
-  
+
   // Get all certifications
   app.get("/api/certifications", async (req, res) => {
     try {
       const { type } = req.query;
       let query = db.select().from(certifications);
-      
+
       if (type && typeof type === 'string') {
         query = query.where(eq(certifications.type, type));
       }
-      
+
       const certificationsList = await query.orderBy(certifications.year);
       return res.status(200).json(certificationsList);
     } catch (error) {
@@ -273,36 +273,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Failed to fetch certifications" });
     }
   });
-  
+
   // Get certification by ID
   app.get("/api/certifications/:id", async (req, res) => {
     try {
       const { id } = req.params;
       const [certification] = await db.select().from(certifications).where(eq(certifications.id, parseInt(id)));
-      
+
       if (!certification) {
         return res.status(404).json({ message: "Certification not found" });
       }
-      
+
       return res.status(200).json(certification);
     } catch (error) {
       console.error("Error fetching certification:", error);
       return res.status(500).json({ message: "Failed to fetch certification" });
     }
   });
-  
+
   // Create certification
   app.post("/api/certifications", async (req, res) => {
     try {
       const result = certificationSchema.safeParse(req.body);
-      
+
       if (!result.success) {
         return res.status(400).json({ 
           message: "Invalid certification data", 
           errors: result.error.errors 
         });
       }
-      
+
       const [certification] = await db.insert(certifications).values(result.data).returning();
       return res.status(201).json(certification);
     } catch (error) {

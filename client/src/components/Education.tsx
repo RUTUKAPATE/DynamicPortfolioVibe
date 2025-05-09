@@ -28,10 +28,10 @@ const Education = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="timeline-dot relative pl-8 pb-12 border-l-2 border-primary/30 dark:border-primary/20"
+              className="timeline-dot relative pl-4 md:pl-8 pb-8 md:pb-12 border-l-2 border-primary/30 dark:border-primary/20"
             >
               <div className="absolute -left-2.5 top-0 w-6 h-6 bg-primary rounded-full"></div>
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg ml-6 relative">
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-4 md:p-6 shadow-lg ml-4 md:ml-6 relative hover:shadow-xl transition-shadow">
                 <div className="absolute -left-3 top-6 w-6 h-6 bg-white dark:bg-gray-800 transform rotate-45 border-l border-b border-gray-200 dark:border-gray-700"></div>
                 <h3 className="text-xl font-bold font-poppins">{edu.degree}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mt-1">{edu.institution}</p>
