@@ -40,10 +40,7 @@ const Navbar = () => {
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
             <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary-foreground/50 rounded-full"></div>
           </div>
-          <div>
-            <span className="text-2xl font-bold font-poppins bg-gradient-text">Rutuja</span>
-            <span className="hidden sm:inline text-2xl font-bold font-poppins"> Kapate</span>
-          </div>
+          
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
