@@ -34,8 +34,16 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm z-50 transition-colors duration-300 ${scrolled ? 'shadow-md' : ''}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold font-poppins bg-gradient-text">
-          Rutuja<span className="hidden sm:inline">.dev</span>
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="relative w-9 h-9 flex items-center justify-center bg-primary rounded-lg shadow-lg transform group-hover:rotate-6 transition-transform">
+            <span className="text-white font-bold text-xl">R</span>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full"></div>
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary-foreground/50 rounded-full"></div>
+          </div>
+          <div>
+            <span className="text-2xl font-bold font-poppins bg-gradient-text">Rutuja</span>
+            <span className="hidden sm:inline bg-gradient-text text-2xl font-bold font-poppins">.dev</span>
+          </div>
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -44,7 +52,6 @@ const Navbar = () => {
               <a href="#about" className="hover:text-primary transition-colors">About</a>
               <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
               <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#workshops" className="hover:text-primary transition-colors">Workshops</a>
               <a href="#certifications" className="hover:text-primary transition-colors">Certifications</a>
               <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </>
@@ -79,7 +86,6 @@ const Navbar = () => {
               <a href="#about" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>About</a>
               <a href="#experience" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Experience</a>
               <a href="#projects" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Projects</a>
-              <a href="#workshops" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Workshops</a>
               <a href="#certifications" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Certifications</a>
               <a href="#contact" className="py-2 hover:text-primary transition-colors" onClick={closeMenu}>Contact</a>
             </>

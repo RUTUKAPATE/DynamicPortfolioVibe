@@ -58,6 +58,11 @@
   body {
     @apply bg-background text-foreground font-inter antialiased;
   }
+  
+  /* Add global margins */
+  .container {
+    @apply px-6 md:px-10 lg:px-12 max-w-7xl mx-auto;
+  }
 }
 
 @layer utilities {

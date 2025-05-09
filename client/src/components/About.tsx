@@ -30,31 +30,12 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold font-poppins mb-4">Who am I?</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              I'm a final year Electronics and Telecommunication Engineering student with a passion for web development. My journey in technology has led me to explore the intersection of hardware and software, giving me a unique perspective on creating digital solutions.
+              I'm a passionate web developer with a background in Electronics and Telecommunication Engineering. I create modern, accessible and user-friendly websites and web applications with a focus on clean code and stunning designs.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              With 6 months of internship experience at FifthTry as a Software Developer, I've honed my skills in modern web technologies and collaborative development workflows. I'm particularly interested in creating accessible, performant, and visually appealing web applications.
+              With experience as a Software Developer at FifthTry, I've developed expertise in frontend and backend technologies. I enjoy tackling complex problems and transforming ideas into functional digital solutions.
             </p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Location</h4>
-                <p className="text-gray-600 dark:text-gray-400">Nagpur, Maharashtra, India</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Email</h4>
-                <p className="text-gray-600 dark:text-gray-400">rutuja16kapate@gmail.com</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Study</h4>
-                <p className="text-gray-600 dark:text-gray-400">B.Tech in Electronics & Telecom</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg mb-2">Interests</h4>
-                <p className="text-gray-600 dark:text-gray-400">Web Development, UI Design</p>
-              </div>
-            </div>
             
             <div className="flex flex-wrap gap-4">
               <a 

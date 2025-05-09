@@ -82,11 +82,13 @@ export function ThemeToggle() {
   return (
     <button 
       onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative w-8 h-8 flex items-center justify-center"
       aria-label="Toggle theme"
     >
-      <i className="fas fa-moon dark:hidden"></i>
-      <i className="fas fa-sun hidden dark:block"></i>
+      <i className="fas fa-moon text-lg absolute transition-opacity duration-300 ease-in-out" 
+         style={{ opacity: theme === 'dark' ? 0 : 1 }}></i>
+      <i className="fas fa-sun text-lg absolute transition-opacity duration-300 ease-in-out" 
+         style={{ opacity: theme === 'dark' ? 1 : 0 }}></i>
     </button>
   );
 }
