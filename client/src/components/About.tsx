@@ -39,7 +39,8 @@ const About = () => {
             
             <div className="flex flex-wrap gap-4">
               <a 
-                href="#" 
+                href="/src/assets/Rutuja Kapate Resume.pdf"
+                download="Rutuja Kapate Resume.pdf"
                 className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg shadow-primary/20 font-medium transition-all transform hover:-translate-y-1"
               >
                 <i className="fas fa-download mr-2"></i> Download CV
