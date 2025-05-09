@@ -155,6 +155,16 @@ export const education = [
     achievements: [
       "School topper in Mathematics",
       "Science project competition winner"
+    ],
+    certificates: [
+      {
+        title: "HSC Certificate",
+        url: "/certificates/hsc-certificate.pdf"
+      },
+      {
+        title: "HSC Marksheet",
+        url: "/certificates/hsc-marksheet.pdf"
+      }
     ]
   },
   {
@@ -167,6 +177,16 @@ export const education = [
     achievements: [
       "School prefect",
       "Winner of inter-school debate competition"
+    ],
+    certificates: [
+      {
+        title: "SSC Certificate",
+        url: "/certificates/ssc-certificate.pdf"
+      },
+      {
+        title: "SSC Marksheet",
+        url: "/certificates/ssc-marksheet.pdf"
+      }
     ]
   },
 ];
