@@ -52,6 +52,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         },
       });
 
+      // Verify SMTP connection
+      try {
+        await transporter.verify();
+        console.log('SMTP connection verified successfully');
+      } catch (error) {
+        console.error('SMTP verification failed:', error);
+        throw new Error('Failed to connect to email server');
+      }
+
       // Email content
       const mailOptions = {
         from: `"Portfolio Contact" <noreply@example.com>`,
@@ -78,6 +87,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
           </div>
         `,
       };
+
+      // Send the email
+      await transporter.sendMail(mailOptions);
 
       // Store the contact message in database
       await storage.createContactMessage({ name, email, subject, message });
