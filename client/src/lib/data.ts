@@ -133,6 +133,16 @@ export const education = [
       "Department topper in Digital Signal Processing",
       "Best final year project: IoT-based Smart Home System",
       "Member of the college technical club"
+    ],
+    certificates: [
+      {
+        title: "Degree Certificate",
+        url: "/certificates/btech-degree.pdf"
+      },
+      {
+        title: "Final Marksheet",
+        url: "/certificates/btech-marksheet.pdf"
+      }
     ]
   },
   {
