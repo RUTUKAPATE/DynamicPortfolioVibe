@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
           <div>
             <span className="text-2xl font-bold font-poppins bg-gradient-text">Rutuja</span>
-            <span className="hidden sm:inline bg-gradient-text text-2xl font-bold font-poppins">.dev</span>
+            <span className="hidden sm:inline text-2xl font-bold font-poppins"> Kapate</span>
           </div>
         </Link>
         

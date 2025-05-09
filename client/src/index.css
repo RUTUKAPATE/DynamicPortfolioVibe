@@ -69,6 +69,10 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 
   .skill-bubble {
     @apply transition-all duration-300;
@@ -101,6 +105,25 @@
     filter: grayscale(100%) invert(var(--map-invert));
     @apply transition-all duration-300;
   }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .responsive-grid {
+      @apply grid-cols-1;
+    }
+    
+    .responsive-flex {
+      @apply flex-col;
+    }
+    
+    .responsive-text {
+      @apply text-left text-base;
+    }
+    
+    .responsive-hide {
+      @apply hidden;
+    }
+  }
 }
 
 @keyframes float {
@@ -109,6 +132,15 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 
