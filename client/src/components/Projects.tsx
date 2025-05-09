@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projects } from "@/lib/data";
+import { useState } from "react";
+import { Link } from "wouter";
+
+type ProjectCategory = "all" | "frontend" | "backend" | "fullstack";
 
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
+
+  // Only show a maximum of 3 projects on the home page
+  const filteredProjects = activeCategory === "all" 
+    ? projects.slice(0, 3) 
+    : projects.filter(project => project.category === activeCategory).slice(0, 3);
 
   return (
     <section id="projects" ref={ref} className="py-20 relative">
@@ -24,8 +35,56 @@ const Projects = () => {
           </p>
         </motion.div>
         
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center flex-wrap gap-4 mb-12"
+        >
+          <button 
+            onClick={() => setActiveCategory("all")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeCategory === "all" 
+                ? "bg-primary text-white" 
+                : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            All Projects
+          </button>
+          <button 
+            onClick={() => setActiveCategory("frontend")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeCategory === "frontend" 
+                ? "bg-primary text-white" 
+                : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            Frontend
+          </button>
+          <button 
+            onClick={() => setActiveCategory("backend")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeCategory === "backend" 
+                ? "bg-primary text-white" 
+                : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            Backend
+          </button>
+          <button 
+            onClick={() => setActiveCategory("fullstack")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeCategory === "fullstack" 
+                ? "bg-primary text-white" 
+                : "bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+            }`}
+          >
+            Full Stack
+          </button>
+        </motion.div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div 
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -39,11 +98,16 @@ const Projects = () => {
                 className="w-full h-56 object-cover" 
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold font-poppins mb-2">{project.title}</h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-bold font-poppins">{project.title}</h3>
+                  <span className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-xs">
+                    {project.category}
+                  </span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm">
+                    <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
                       {tech}
                     </span>
                   ))}
@@ -61,15 +125,22 @@ const Projects = () => {
           ))}
         </div>
         
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-16">
+            <i className="fas fa-search text-5xl text-gray-300 dark:text-gray-700 mb-4"></i>
+            <p className="text-gray-600 dark:text-gray-400">No projects found in this category. Check back later!</p>
+          </div>
+        )}
+        
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 border border-primary text-primary hover:bg-primary/5 rounded-lg font-medium transition-all transform hover:-translate-y-1">
+          <Link href="/projects" className="inline-flex items-center px-6 py-3 border border-primary text-primary hover:bg-primary/5 rounded-lg font-medium transition-all transform hover:-translate-y-1">
             View All Projects <i className="fas fa-arrow-right ml-2"></i>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

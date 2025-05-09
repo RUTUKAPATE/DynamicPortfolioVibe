@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { skills } from "@/lib/data";
+import { skillsCategories } from "@/lib/data";
 
 const Skills = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const categories = [
+    { id: "frontend", title: "Frontend", color: "from-blue-500 to-indigo-500" },
+    { id: "backend", title: "Backend", color: "from-green-500 to-emerald-500" },
+    { id: "database", title: "Database", color: "from-orange-500 to-amber-500" },
+    { id: "tools", title: "Tools & Others", color: "from-purple-500 to-violet-500" },
+  ];
 
   return (
     <section id="skills" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
@@ -24,19 +31,35 @@ const Skills = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
+        <div className="space-y-16">
+          {categories.map((category, categoryIndex) => (
             <motion.div 
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="skill-bubble bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center"
+              key={category.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
+              className="mb-8"
             >
-              <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className={`${skill.icon} text-primary text-2xl`}></i>
+              <h3 className={`text-2xl font-bold font-poppins mb-6 text-transparent bg-clip-text bg-gradient-to-r ${category.color}`}>
+                {category.title}
+              </h3>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {skillsCategories[category.id as keyof typeof skillsCategories].map((skill, index) => (
+                  <motion.div 
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5, delay: (categoryIndex * 0.2) + (index * 0.05) }}
+                    className="skill-bubble bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center"
+                  >
+                    <div className={`w-16 h-16 bg-gradient-to-br ${category.color} opacity-10 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <i className={`${skill.icon} text-gray-800 dark:text-white text-2xl`}></i>
+                    </div>
+                    <h3 className="font-bold font-poppins">{skill.name}</h3>
+                  </motion.div>
+                ))}
               </div>
-              <h3 className="font-bold font-poppins">{skill.name}</h3>
             </motion.div>
           ))}
         </div>

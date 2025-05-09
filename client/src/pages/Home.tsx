@@ -1,13 +1,14 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Awards from "@/components/Awards";
+import Workshops from "@/components/Workshops";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -32,17 +33,17 @@ const Home = () => {
 
     // Open Graph tags
     const ogTitle = document.createElement("meta");
-    ogTitle.property = "og:title";
+    ogTitle.setAttribute("property", "og:title");
     ogTitle.content = "Rutuja Kapate | Web Developer";
     document.head.appendChild(ogTitle);
 
     const ogDescription = document.createElement("meta");
-    ogDescription.property = "og:description";
+    ogDescription.setAttribute("property", "og:description");
     ogDescription.content = "Check out Rutuja Kapate's portfolio showcasing web development projects and professional experience.";
     document.head.appendChild(ogDescription);
 
     const ogType = document.createElement("meta");
-    ogType.property = "og:type";
+    ogType.setAttribute("property", "og:type");
     ogType.content = "website";
     document.head.appendChild(ogType);
 
@@ -61,17 +62,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen transition-colors duration-300">
-      <Navbar />
+    <>
       <Hero />
       <About />
+      <Services />
       <Skills />
       <Projects />
       <Education />
       <Awards />
+      <Workshops />
+      <Certifications />
       <Contact />
-      <Footer />
-    </div>
+    </>
   );
 };
 

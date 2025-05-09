@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "wouter";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -55,12 +56,21 @@ const About = () => {
               </div>
             </div>
             
-            <a 
-              href="#" 
-              className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg shadow-primary/20 font-medium transition-all transform hover:-translate-y-1"
-            >
-              <i className="fas fa-download mr-2"></i> Download CV
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="#" 
+                className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg shadow-lg shadow-primary/20 font-medium transition-all transform hover:-translate-y-1"
+              >
+                <i className="fas fa-download mr-2"></i> Download CV
+              </a>
+              
+              <Link 
+                href="/about" 
+                className="inline-flex items-center px-6 py-3 border border-primary text-primary hover:bg-primary/5 rounded-lg font-medium transition-all transform hover:-translate-y-1"
+              >
+                Know More <i className="fas fa-arrow-right ml-2"></i>
+              </Link>
+            </div>
           </motion.div>
           
           <motion.div 
