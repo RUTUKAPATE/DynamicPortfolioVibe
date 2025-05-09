@@ -61,7 +61,14 @@
   
   /* Add global margins */
   .container {
-    @apply px-6 md:px-10 lg:px-24 xl:px-32 max-w-[1440px] mx-auto;
+    @apply px-6 md:px-10 lg:px-32 xl:px-40 max-w-[1440px] mx-auto;
+  }
+
+  /* Specific margins for laptop screens */
+  @media (min-width: 1024px) {
+    .container {
+      @apply px-16;
+    }
   }
 }
 
