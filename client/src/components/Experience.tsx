@@ -5,43 +5,17 @@ import { useInView } from "react-intersection-observer";
 const experiences = [
   {
     company: "FifthTry",
-    position: "Software Developer",
-    period: "Jan 2023 - Jul 2023",
+    position: "Software Developer Intern",
+    period: "Aug 2024 - Feb 2025",
     description: "Worked on developing web applications using modern frontend technologies. Implemented responsive UI components and collaborated with cross-functional teams to deliver high-quality software solutions.",
     responsibilities: [
-      "Developed responsive UI components using React and Tailwind CSS",
+      "Developed responsive UI components using fastn",
       "Implemented new features and fixed bugs in existing applications",
       "Collaborated with design and backend teams to implement user requirements",
       "Participated in code reviews and technical discussions"
     ],
     logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
   },
-  {
-    company: "Intern at TechSolutions",
-    position: "Web Development Intern",
-    period: "May 2022 - Aug 2022",
-    description: "Gained hands-on experience in web development by assisting the development team with various tasks and learning from experienced developers.",
-    responsibilities: [
-      "Assisted senior developers in implementing frontend components",
-      "Learned and applied modern web development practices",
-      "Created documentation for existing codebase",
-      "Tested applications for bugs and usability issues"
-    ],
-    logo: "https://images.unsplash.com/photo-1558222218-b7b54eede3f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-  },
-  {
-    company: "College Project",
-    position: "Team Lead",
-    period: "Sep 2021 - Apr 2022",
-    description: "Led a team of 4 students in developing a home automation system as part of the final year project. Integrated sensors and controllers with a mobile application interface.",
-    responsibilities: [
-      "Managed project timeline and team coordination",
-      "Developed the mobile application interface using React Native",
-      "Integrated IoT devices and sensors with the application",
-      "Presented the project at college technical symposium"
-    ],
-    logo: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-  }
 ];
 
 const Experience = () => {
@@ -51,7 +25,7 @@ const Experience = () => {
   });
 
   return (
-    <section id="experience" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
+    <section id="experience" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

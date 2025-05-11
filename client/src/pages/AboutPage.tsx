@@ -3,7 +3,7 @@ import { education, awards } from "@/lib/data";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 lg:container">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
@@ -50,7 +50,7 @@ const AboutPage = () => {
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Age:</div>
-                <div>24</div>
+                <div>21</div>
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Email:</div>
@@ -62,15 +62,15 @@ const AboutPage = () => {
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Location:</div>
-                <div>Pune, Maharashtra, India</div>
+                <div>Nagpur, Maharashtra, India</div>
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Experience:</div>
-                <div>2+ Years</div>
+                <div>Fresher</div>
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Degree:</div>
-                <div>B.E. Electronics and Telecommunication</div>
+                <div>B.Tech Electronics and Telecommunication</div>
               </div>
               <div className="flex">
                 <div className="w-32 font-medium">Languages:</div>
@@ -82,34 +82,34 @@ const AboutPage = () => {
               <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/rutujakapate" 
+                  href="https://github.com/RUTUKAPATE" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white text-gray-400 hover:text-primary transition-all transform hover:-translate-y-1"
                 >
                   <i className="fab fa-github"></i>
                 </a>
                 <a 
-                  href="https://linkedin.com/in/rutujakapate" 
+                  href="https://linkedin.com/in/rutuja-kapate" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white text-gray-400 hover:text-primary transition-all transform hover:-translate-y-1"
                 >
                   <i className="fab fa-linkedin-in"></i>
                 </a>
                 <a 
-                  href="https://twitter.com/rutujakapate" 
+                  href="https://x.com/KapateRutuja" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white text-gray-400 hover:text-primary transition-all transform hover:-translate-y-1"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a 
-                  href="https://instagram.com/rutujakapate" 
+                  href="https://instagram.com/rutu_kapate" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg hover:bg-primary hover:text-white text-gray-400 hover:text-primary transition-all transform hover:-translate-y-1"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>

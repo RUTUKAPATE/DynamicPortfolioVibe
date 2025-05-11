@@ -20,7 +20,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeCategory).slice(0, 3);
 
   return (
-    <section id="projects" ref={ref} className="py-20 relative">
+    <section id="projects" ref={ref} className="py-20 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

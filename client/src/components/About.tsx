@@ -9,7 +9,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" ref={ref} className="py-20 relative">
+    <section id="about" ref={ref} className="py-20 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

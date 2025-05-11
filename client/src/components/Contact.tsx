@@ -69,7 +69,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
+    <section id="contact" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -212,16 +212,16 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold">Social Profiles</h4>
                     <div className="flex mt-2 space-x-4">
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                      <a href="https://github.com/RUTUKAPATE" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                         <i className="fab fa-github text-xl"></i>
                       </a>
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                      <a href="https://linkedin.com/in/rutuja-kapate" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                         <i className="fab fa-linkedin text-xl"></i>
                       </a>
-                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                      <a href="https://x.com/KapateRutuja" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                         <i className="fab fa-twitter text-xl"></i>
                       </a>
-                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                      <a href="https://instagram.com/rutu_kapate" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
                         <i className="fab fa-instagram text-xl"></i>
                       </a>
                     </div>

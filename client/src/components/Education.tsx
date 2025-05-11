@@ -9,7 +9,7 @@ const Education = () => {
   });
 
   return (
-    <section id="education" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
+    <section id="education" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const Education = () => {
                 className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg relative group"
               >
                 {edu.certificates && (
-                  <div className="absolute top-4 right-4 flex flex-wrap gap-2 max-w-[60%] justify-end">
+                  <div className="absolute top-6 right-4 flex flex-wrap gap-2 max-w-[60%] justify-end">
                     {edu.certificates.map((cert, certIndex) => (
                       <a
                         key={certIndex}

@@ -10,6 +10,8 @@ import AdminPage from "./pages/AdminPage";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WorkshopsPage from "./pages/WorkshopsPage";
+import CertificationsPage from "./pages/CertificationsPage";
 
 function App() {
   const [location] = useLocation();
@@ -19,12 +21,14 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <div className="min-h-screen transition-colors duration-300">
+        <div className="min-h-screen transition-colors duration-300 overflow-hidden">
           {!isAdminPage && <Navbar />}
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/about" component={AboutPage} />
             <Route path="/projects" component={ProjectsPage} />
+            <Route path="/workshops" component={WorkshopsPage} />
+            <Route path="/certifications" component={CertificationsPage} />
             <Route path="/admin" component={AdminPage} />
             <Route component={NotFound} />
           </Switch>

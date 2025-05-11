@@ -13,7 +13,7 @@ const Workshops = () => {
   const featuredWorkshops = workshops.slice(0, 3);
 
   return (
-    <section id="workshops" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
+    <section id="workshops" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-900/50 relative lg:container">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
