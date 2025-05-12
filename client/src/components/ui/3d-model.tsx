@@ -8,7 +8,7 @@ export function Model3D() {
       ref={containerRef}
       className="w-full h-full rounded-full overflow-hidden relative shadow-2xl"
     >
-      <img src="/src/assets/AdobeStock_1213309036_Preview.jpeg"
+      <img src="/src/assets/Hero.jpeg"
         alt="3D Cartoon Developer Girl"
         className="w-full h-full object-cover"
       />
