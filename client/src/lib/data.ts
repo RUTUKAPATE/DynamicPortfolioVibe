@@ -185,7 +185,7 @@ export const education = [
       // },
       {
         title: "All Marksheet",
-        url: "/src/assets/btech-marksheet.pdf"
+        url: "/btech-marksheet.pdf"
       }
     ]
   },
@@ -202,11 +202,11 @@ export const education = [
     certificates: [
       {
         title: "HSC Certificate",
-        url: "/src/assets/hsc-certificate.pdf"
+        url: "/hsc-certificate.pdf"
       },
       {
         title: "HSC Marksheet",
-        url: "/src/assets/hsc-marksheet.pdf"
+        url: "/hsc-marksheet.pdf"
       }
     ]
   },
@@ -224,11 +224,11 @@ export const education = [
     certificates: [
       {
         title: "SSC Certificate",
-        url: "/src/assets/ssc-certificate.pdf"
+        url: "/ssc-certificate.pdf"
       },
       {
         title: "SSC Marksheet",
-        url: "/src/assets/ssc-marksheet.pdf"
+        url: "/ssc-marksheet.pdf"
       }
     ]
   },

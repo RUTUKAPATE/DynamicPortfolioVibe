@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import HeroImg from "@/assets/Hero.jpeg";
 
 export function Model3D() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -8,7 +9,7 @@ export function Model3D() {
       ref={containerRef}
       className="w-full h-full rounded-full overflow-hidden relative shadow-2xl"
     >
-      <img src="/src/assets/Hero.jpeg"
+      <img src={HeroImg}
         alt="3D Cartoon Developer Girl"
         className="w-full h-full object-cover"
       />
